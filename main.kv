@@ -1,0 +1,212 @@
+<MainScreen>:
+	First:
+		id: first
+		name: 'first'
+		BoxLayout:
+			orientation: 'vertical'
+			spacing: 10
+			padding: 10
+			canvas:
+				Color:
+					rgb: 0.71,0.76,0.78
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			Box02:
+				size_hint: 1,0.1
+				canvas:
+					Color:
+						rgb: 0.07,0.34,0.18
+					Rectangle:
+						size: self.size
+						pos: self.pos
+				BoxLayout:
+					Label:
+						bold: True
+						text: 'versión 0.3 - 17/08/2021'
+			Box03:
+				id: box03
+				BoxLayout:
+					id: add
+					size_hint: 0.7,1
+					padding: 10
+					spacing: 10
+					orientation: 'vertical'
+					canvas:
+						Color:
+							rgb: 0.06,0.42,0.49
+						Rectangle:
+							size: self.size
+							pos: self.pos
+					GridLayout:
+						id: add2
+						cols: 3
+						size_hint: 1,0.8
+						spacing: 5
+						Label:
+							text: 'CURSO'
+							bold: True
+						Label:
+							text: 'NOTAS'
+							bold: True
+						Label:
+							text: 'CRÉDITOS'
+							bold: True
+						MyLabel:
+							text: 'Nombre 1'
+						MyButton:
+							id: n1
+						MyButton:
+							id: c1
+						MyLabel:
+							text: 'Nombre 2'
+						MyButton:
+							id: n2
+						MyButton:
+							id: c2
+						MyLabel:
+							text: 'Nombre 3'
+						MyButton:
+							id: n3
+						MyButton:
+							id: c3
+						MyLabel:
+							text: 'Nombre 4'
+						MyButton:
+							id: n4
+						MyButton:
+							id: c4
+						MyLabel:
+							text: 'Nombre 5'
+						MyButton:
+							id: n5
+						MyButton:
+							id: c5
+					BoxLayout:
+						size_hint: 1,0.2
+						canvas:
+							Color:
+								rgb: 0.71,0.76,0.78
+							Rectangle:
+								size: self.size
+								pos: self.pos
+						BoxLayout:
+							size_hint: 0.1,1
+						Button:
+							background_color: 0.1, 0.5, 0.6, 1
+							text: 'Calcular'
+							size_hint: 0.75, 0.75
+							pos_hint: {'center_x': .5, 'center_y': .5}
+							on_press: app.root.ids.box03.calculate()
+						Label:
+							id: prom
+							text: 'Promedio'
+							bold: True
+							color: 0,0,0,1
+	Second:
+		id: second
+		name: 'second'
+		BoxLayout:
+			canvas:
+				Color:
+					rgb: 0.71,0.76,0.78
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			GridLayout:
+				cols:4
+				padding: 5
+				DigButton:
+					text: '1'
+				DigButton:
+					text: '2'
+				DigButton:
+					text: '3'
+				DigButton:
+					text: '4'
+				DigButton:
+					text: '5'
+				DigButton:
+					text: '6'
+				DigButton:
+					text: '7'
+				DigButton:
+					text: '8'
+				DigButton:
+					text: '9'
+				DigButton:
+					text: '10'
+				DigButton:
+					text: '11'
+				DigButton:
+					text: '12'
+				DigButton:
+					text: '13'
+				DigButton:
+					text: '14'
+				DigButton:
+					text: '15'
+				DigButton:
+					text: '16'
+				DigButton:
+					text: '17'
+				DigButton:
+					text: '18'
+				DigButton:
+					text: '19'
+				DigButton:
+					text: '20'
+	Third:
+		id: third
+		name: 'third'
+		BoxLayout:
+			orientation: 'vertical'
+			padding: 30
+			spacing: 30
+			canvas:
+				Color:
+					rgb: 0.71,0.76,0.78
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			Label:
+				size_hint: 1, 0.5
+				bold: True
+				text: 'Ingrese el nombre del curso:'
+				color: 0,0,0,1
+			TextInput:
+				id: nuevo
+				multiline: False
+				size_hint: .5, 0.25
+				pos_hint: {'center_x': .5}
+			Button:
+				text: 'Cambiar'
+				size_hint: .5, 0.3
+				pos_hint: {'center_x': .5}
+				background_color: 0.74, 0.14, 0.14, 1
+				on_press:
+					app.root.ids.third.btn3(self)
+					root.ids.nuevo.text = ''
+			Button:
+				text: 'Volver'
+				size_hint: .5, 0.3
+				background_color: 0.74, 0.14, 0.14, 1
+				pos_hint: {'center_x': .5}
+    			on_press: app.root.ids.third.btn3B(self)
+    		Label:
+
+
+
+<MyButton@Button>:
+	background_color: 0.1, 0.5, 0.6, 0.75
+	text: 'Agregar'
+	on_press: app.root.ids.first.btn1(self)
+
+<DigButton@Button>:
+	background_color: 0.74, 0.14, 0.14, 1
+	bold: True
+	on_press: app.root.ids.second.btn2(self)
+	
+<MyLabel@ButtonBehavior+Label>:
+	on_press: app.root.ids.first.btn1B(self)
+
